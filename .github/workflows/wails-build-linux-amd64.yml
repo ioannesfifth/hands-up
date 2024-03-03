@@ -1,5 +1,0 @@
-- name: Wails Build Action
-- uses: dAppServer/wails-build-action@v2.2
-  with:
-    build-name: wailsApp
-    build-platform: linux/amd64
