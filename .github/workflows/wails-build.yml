@@ -14,6 +14,7 @@ jobs:
         build: [
           {name: hands-up-linux, platform: linux/amd64, os: ubuntu-latest},
           {name: hands-up-windows, platform: windows/amd64, os: windows-latest},
+          {name: hands-up-mac, platform: darwin/universal, os: macos-latest},
         ]
     runs-on: ${{ matrix.build.os }}
     steps:

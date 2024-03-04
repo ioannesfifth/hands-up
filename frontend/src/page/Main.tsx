@@ -31,7 +31,7 @@ function TimerDisplay() {
     const timeDifference = await ClickTimeDifference();
 
     setClickTimeDifference(timeDifference);
-    await sleep(3000);
+    await sleep(1500);
     setResettable(true);
   }
 
@@ -46,7 +46,7 @@ function TimerDisplay() {
   if (!startedCountdown) {
     return (
       <button
-        className="rounded-full bg-[#6b7179] text-slate-200 w-72 h-72 font-sans text-4xl font-bold"
+        className="rounded-full bg-[#6b7179] text-slate-200 w-72 h-72 font-sans text-4xl font-bold outline outline-[#575c63]"
         onClick={onTimerStart}
       >
         Start
@@ -54,36 +54,36 @@ function TimerDisplay() {
     );
   } else if (startedCountdown && !endedCountdown) {
     return (
-      <CountdownCircleTimer
-        size={288}
-        isPlaying
-        duration={5}
-        colors={["#6b7179", "#7EAA92"]}
-        colorsTime={[5, 0]}
-        onComplete={() => {
-          onTimerEnd();
-        }}
-      >
-        {({ remainingTime }) => (
-          <div className="text-slate-800 font-sans text-4xl font-bold">
-            {remainingTime}
-          </div>
-        )}
-      </CountdownCircleTimer>
+        <CountdownCircleTimer
+          size={288}
+          isPlaying
+          duration={5}
+          colors={["#6b7179", "#7EAA92"]}
+          colorsTime={[5, 0]}
+          onComplete={() => {
+            onTimerEnd();
+          }}
+        >
+          {({ remainingTime }) => (
+            <div className="text-slate-800 font-sans text-4xl font-bold">
+              {remainingTime}
+            </div>
+          )}
+        </CountdownCircleTimer>
     );
   } else if (startedCountdown && endedCountdown) {
     return (
       <>
         {clickTimeDifference === 0 ? (
           <button
-            className="rounded-full bg-[#7EAA92] text-slate-800 w-72 h-72 font-sans text-4xl font-bold"
+            className="rounded-full bg-[#7EAA92] text-slate-800 w-72 h-72 font-sans text-4xl font-bold outline outline-[#678b78]"
             onClick={onClick}
           >
             Go!
           </button>
         ) : (
           <button
-            className="rounded-full bg-[#fdc47e] w-72 h-72"
+            className="rounded-full bg-[#fdc47e] w-72 h-72 outline outline-[#d3a46a]"
             disabled={!resettable}
             onClick={onReset}
           >
@@ -110,7 +110,7 @@ function TimerDisplay() {
 
 export default function Main() {
   return (
-    <div className="w-screen h-screen flex flex-col justify-center items-center bg-[#e2d4b8]">
+    <div className="w-screen h-screen flex flex-col justify-center items-center bg-[#F8C3AF]">
       <TimerDisplay />
     </div>
   );
