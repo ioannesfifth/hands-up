@@ -2,6 +2,8 @@
 
 ***Hands Up!*** is a small app for dealing with the issue of ping when raising your hands on Google Meet between farway teams.
 
+<video src="README assets/Demo.webm" width="320" height="240" controls></video>
+
 # Current State
 
 ***Hands Up!*** is currently under active development. This first version will probably remain as the core product, but many more problems need to be solved including but not limited to:
