@@ -2,7 +2,7 @@
 
 ***Hands Up!*** is a small app for dealing with the issue of ping when raising your hands on Google Meet between farway teams.
 
-<video src="https://github.com/ioannesfifth/hands-up/assets/49405572/dc1236a9-27ed-4db8-b41f-72f9325e400e" width="320" height="240" controls></video>
+<video src="https://github.com/ioannesfifth/hands-up/assets/49405572/8c13455f-c2fd-43cb-9d33-1ed1a2ce33ee" width="320" height="240" controls></video>
 
 # Current State
 
@@ -13,6 +13,7 @@
 - Personal Best records
 - Add a backend to handle the above, possibly using Go and gin or gRPC depending on future Svelte support for it
 - Adjustable duration and tempo
+
 
 # How to use
 
