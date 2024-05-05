@@ -16,6 +16,6 @@
 
 1. Download the project.
 2. Make sure your docker is running.
-3. In the root directory (i.e. the directory that contains `./frontend` and `./backend`), run `./build.sh`.
+3. In the root directory (i.e. the directory that contains `./frontend`), run `./build.sh`.
 4. After the build succeeds, run `./run.sh`.
 5. Open [localhost:5173](http://localhost:5173/) on your browser (you may have to wait a bit for everything to get started).
