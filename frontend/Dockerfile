@@ -13,7 +13,7 @@ WORKDIR /app/frontend
 RUN npm install -g pnpm
 
 # Install dependencies
-RUN pnpm -P install --frozen-lockfile
+RUN pnpm install --frozen-lockfile
 
 EXPOSE 5173
 ENV HOST=0.0.0.0
