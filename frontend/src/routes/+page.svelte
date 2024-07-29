@@ -54,14 +54,14 @@
       {#if state === "start"}
         <ActionButton text="&nbsp;start!" onClick={handleStartCountdown}></ActionButton>
       {:else if state === "countdown"}
-        <ActionButton text="&nbsp;&nbsp;counting..." disabled onClick={handleEndTimer}></ActionButton>
+        <ActionButton text="&nbsp;&nbsp;counting..." disabled></ActionButton>
       {:else if state === "timer"}
         <ActionButton text="&nbsp;&nbsp;hands up!" onClick={handleEndTimer}></ActionButton>
       {:else}
         <ActionButton text="&nbsp;&nbsp;restart?" onClick={handleRestart}></ActionButton>
       {/if}
 
-      <div class="text-7xl font-mono w-full flex flex-row justify-center">
+      <div class="text-5xl md:text-7xl font-mono w-full flex flex-row justify-center">
         {#if state === "result"}
           <div class="flex flex-row items-end">
             <div class="drop-shadow-xl">{timer}</div>
