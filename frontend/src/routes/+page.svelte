@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { MousePointerClick } from "lucide-svelte";
-  import { fade } from "svelte/transition";
+  import ActionButton from "../lib/components/ActionButton.svelte";
 
   let timeScale = 1000;
   let intervalScale = 100;
@@ -53,33 +52,13 @@
   <div class="h-3/5 w-7/12 flex flex-col justify-end">
     <div class="h-1/2 w-full flex flex-col justify-center items-center">
       {#if state === "start"}
-        <button
-          class="text-9xl font-cursive drop-shadow-md hover:drop-shadow-2xl active:drop-shadow-md active:text-[#609172] text-[#3c5f48] hover:text-[#487056] flex flex-row"
-          on:click={handleStartCountdown}
-        >
-          &nbsp;start! <MousePointerClick size={64} />
-        </button>
+        <ActionButton text="&nbsp;start!" onClick={handleStartCountdown}></ActionButton>
       {:else if state === "countdown"}
-        <button
-          class="text-9xl font-cursive drop-shadow-md text-[#636363]"
-          disabled
-        >
-          &nbsp;&nbsp;counting...
-        </button>
+        <ActionButton text="&nbsp;&nbsp;counting..." disabled onClick={handleEndTimer}></ActionButton>
       {:else if state === "timer"}
-        <button
-          class="text-9xl font-cursive drop-shadow-md hover:drop-shadow-2xl active:drop-shadow-md active:text-[#609172] text-[#3c5f48] hover:text-[#487056] flex flex-row"
-          on:click={handleEndTimer}
-        >
-          &nbsp;&nbsp;hands up! <MousePointerClick size={64} />
-        </button>
+        <ActionButton text="&nbsp;&nbsp;hands up!" onClick={handleEndTimer}></ActionButton>
       {:else}
-        <button
-          class="text-9xl font-cursive drop-shadow-md hover:drop-shadow-2xl active:drop-shadow-md active:text-[#609172] text-[#3c5f48] hover:text-[#487056] flex flex-row"
-          on:click={handleRestart}
-        >
-          &nbsp;&nbsp;restart? <MousePointerClick size={64} />
-        </button>
+        <ActionButton text="&nbsp;&nbsp;restart?" onClick={handleRestart}></ActionButton>
       {/if}
 
       <div class="text-7xl font-mono w-full flex flex-row justify-center">

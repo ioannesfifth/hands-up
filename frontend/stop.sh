@@ -1,0 +1,1 @@
+docker stop $(docker ps --filter "name=hands-up" -q)

@@ -1,0 +1,1 @@
+docker run --name hands-up --detach -p 8080:3000 ioannesfifth/hands-up
