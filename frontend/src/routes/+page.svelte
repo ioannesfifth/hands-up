@@ -1,9 +1,10 @@
 <script lang="ts">
   import ActionButton from "../lib/components/ActionButton.svelte";
 
+  let time = 5;
   let timeScale = 1000;
   let intervalScale = 100;
-  let countdown = 5 * timeScale;
+  let countdown = time * timeScale;
 
   let state = "start";
   let timer = 0;
@@ -14,12 +15,11 @@
 
   function handleEndTimer() {
     timer = (Date.now() - timer) / 1000;
-    console.log(timer);
     state = "result";
   }
 
   function handleRestart() {
-    countdown = 5 * timeScale;
+    countdown = time * timeScale;
     timer = 0;
     state = "start";
   }
@@ -27,7 +27,6 @@
   setInterval(() => {
     if (state === "countdown") {
       if (countdown > 0) {
-        console.log("timer", countdown);
         countdown -= timeScale / intervalScale;
       } else {
         state = "timer";
@@ -52,13 +51,13 @@
   <div class="h-3/5 w-7/12 flex flex-col justify-end">
     <div class="h-1/2 w-full flex flex-col justify-center items-center">
       {#if state === "start"}
-        <ActionButton text="&nbsp;start!" onClick={handleStartCountdown}></ActionButton>
+        <ActionButton text={`  start!`} onClick={handleStartCountdown}></ActionButton>
       {:else if state === "countdown"}
-        <ActionButton text="&nbsp;&nbsp;counting..." disabled></ActionButton>
+        <ActionButton text={`  counting...`} disabled></ActionButton>
       {:else if state === "timer"}
-        <ActionButton text="&nbsp;&nbsp;hands up!" onClick={handleEndTimer}></ActionButton>
+        <ActionButton text={`  hands up!`} onClick={handleEndTimer}></ActionButton>
       {:else}
-        <ActionButton text="&nbsp;&nbsp;restart?" onClick={handleRestart}></ActionButton>
+        <ActionButton text={`   restart?`} onClick={handleRestart}></ActionButton>
       {/if}
 
       <div class="text-5xl md:text-7xl font-mono w-full flex flex-row justify-center">

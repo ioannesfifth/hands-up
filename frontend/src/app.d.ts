@@ -1,5 +1,6 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
+import type { DevicePayload } from 'sveltekit-device-detector/dist/types';
 declare global {
   namespace App {
     // interface Error {}
